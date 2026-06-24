@@ -1,0 +1,37 @@
+
+C:\Users\Prachitas\OneDrive\Desktop\XENON APP\frontend\src\pages\ReportsPage.jsx
+  45:60  error  'Icon' is defined but never used  no-unused-vars
+
+C:\Users\Prachitas\OneDrive\Desktop\XENON APP\frontend\src\pages\ScanPage.jsx
+   41:29  error    'Icon' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   64:27  error    'Icon' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+  101:7   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+   99 |       }, 300);
+  100 |     } else if (progress >= 100) {
+> 101 |       setIsScanning(false);
+      |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  102 |       setScanComplete(true);
+  103 |       setStatusText(`Scanned ${scannedFiles.toLocaleString()} files. No threats found.`);
+  104 |       clearInterval(interval);  react-hooks/set-state-in-effect
+  107:6   warning  React Hook useEffect has a missing dependency: 'scannedFiles'. Either include it or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setStatusText' needs the current value of 'scannedFiles'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/exhaustive-deps
+
+C:\Users\Prachitas\OneDrive\Desktop\XENON APP\frontend\src\pages\SettingsPage.jsx
+  41:30  error  'Icon' is defined but never used  no-unused-vars
+
+C:\Users\Prachitas\OneDrive\Desktop\XENON APP\frontend\src\pages\SignInPage.jsx
+  12:36  error  Unnecessary escape character: \.  no-useless-escape
+  56:16  error  'err' is defined but never used   no-unused-vars
+
+C:\Users\Prachitas\OneDrive\Desktop\XENON APP\frontend\src\pages\SignUpPage.jsx
+  15:36  error  Unnecessary escape character: \.  no-useless-escape
+  61:16  error  'err' is defined but never used   no-unused-vars
+
+✖ 10 problems (9 errors, 1 warning)
+

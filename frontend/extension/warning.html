@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Blocked - Xenon Shield</title>
+    <style>
+        :root {
+            --primary: #FF2A2A;
+            --bg-dark: #0f1115;
+            --text-light: #ffffff;
+            --text-muted: #a0a5b1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            background: linear-gradient(145deg, rgba(255, 42, 42, 0.1) 0%, rgba(15, 17, 21, 1) 100%);
+            border: 1px solid rgba(255, 42, 42, 0.3);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 100px rgba(255, 42, 42, 0.15) inset;
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 100px rgba(255, 42, 42, 0.1) inset; }
+            100% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 120px rgba(255, 42, 42, 0.3) inset; }
+        }
+        .icon-shield {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px rgba(255, 42, 42, 0.8));
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+            letter-spacing: -1px;
+        }
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .url-box {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #ff8c8c;
+            word-wrap: break-word;
+            margin-bottom: 1rem;
+        }
+        .reason-box {
+            color: #ffb8b8;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-safe {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .btn-safe:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        .btn-danger {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-danger:hover {
+            color: var(--text-light);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg class="icon-shield" viewBox="0 0 24 24" fill="none" stroke="#FF2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M12 8v4"></path>
+            <path d="M12 16h.01"></path>
+        </svg>
+        <h1>Website Blocked</h1>
+        <p>Xenon Web Shield detected a threat and prevented you from navigating to this potentially malicious website.</p>
+        
+        <div class="url-box" id="malicious-url">Loading URL...</div>
+        <div class="reason-box">Reason: <span id="block-reason">Unknown threat</span></div>
+
+        <div class="actions">
+            <button class="btn-safe" id="btn-back">Go Back to Safety</button>
+            <button class="btn-danger" id="btn-continue">Ignore Risk & Continue</button>
+        </div>
+    </div>
+    <script src="warning.js"></script>
+</body>
+</html>

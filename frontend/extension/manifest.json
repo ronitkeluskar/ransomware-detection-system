@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Xenon Web Shield",
+  "version": "1.0",
+  "description": "Real-time protection against malicious websites and links.",
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Xenon Web Shield Active"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}
